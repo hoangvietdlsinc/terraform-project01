@@ -30,7 +30,7 @@ resource "aws_lb" "alb01" {
     name = var.env_name["alb_name"]
     internal = var.internals
     security_groups = [ aws_security_group.alb.id ]
-    subnets = [ "var.pub_subnet1","var.pub_subnet2" ]
+    subnets = [ var.pub_subnet1,var.pub_subnet2 ]
     ip_address_type = var.ip_type
     load_balancer_type = var.lb_type
 }
