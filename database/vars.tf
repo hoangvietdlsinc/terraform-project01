@@ -13,7 +13,7 @@ variable "db_count" {
 }
 variable "db_instance" {
     type = string
-    default = "db.t2.medium"
+    default = "db.t2.micro"
 }
 variable "db_engine" {
     type = string 
@@ -40,6 +40,7 @@ variable "env_name" {
     default = {
         instance_name = "myrds01"
         rds_subnet_name = "rds_subnet_group"
+        identifier = "myrds01"
     }
 }
 variable "login_info" {
@@ -63,7 +64,11 @@ variable "backup_time" {
   
 }
 
-variable "parameter_group_name " {
+variable "parameter_group_name" {
     type = string
     default = "default.mariadb10.4" 
+}
+variable "final_snapshot" {
+    type = bool
+    default = false
 }

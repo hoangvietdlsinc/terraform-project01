@@ -21,8 +21,8 @@ variable "type_healthcheck" {
 variable "size_count" {
     type = map(number)
     default = {
-        min = 2
-        max = 8
+        min = 0
+        max = 4
     }
   
 }
