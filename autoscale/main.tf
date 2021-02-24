@@ -1,7 +1,7 @@
 resource "aws_launch_configuration" "autosclconfig" {
     image_id = data.aws_ami.amazon-linux-2.id
     instance_type = var.type_instance
-    security_groups = [ "var.webapp_sg" ]
+    security_groups = [var.webapp_sg]
     user_data = data.template_file.web_config.rendered
     lifecycle {
       create_before_destroy = true
